@@ -5,7 +5,7 @@
 </div>
 
 <div align="center"> 
-<a href="https://github.com/manhph2211/Q-HEART/"><img src="https://img.shields.io/badge/Website-DBETA WebPage-blue?style=for-the-badge"></a>
+<a href="https://github.com/manhph2211/Q-HEART/"><img src="https://img.shields.io/badge/Website-QHEART WebPage-blue?style=for-the-badge"></a>
 <a href="https://arxiv.org/pdf/2505.06296"><img src="https://img.shields.io/badge/arxiv-Paper-red?style=for-the-badge"></a>
 <a href="https://huggingface.co/Manhph2211/Q-HEART"><img src="https://img.shields.io/badge/Checkpoint-%F0%9F%A4%97%20Hugging%20Face-White?style=for-the-badge"></a>
 </div>
@@ -42,7 +42,7 @@ pip install torch --index-url https://download.pytorch.org/whl/cu118 # cute 11.1
 pip install -r requirements.txt
 ```
 
-[2] Then, we need to Pre-process the PTB-XL and MIMIC IV (ECG-QA) folder that will contain `.mat` files. We can put them under `data/processed` directory (Or just use absolute path if you have them somewhere else already :smile:).
+[2] Then, we need to Pre-process the PTB-XL and MIMIC IV (ECG-QA) folder that will contain `.mat` files. We can put them under `data/processed` directory.
 
 - MIMIC-IV-ECG v1.0: Used for pre-training the ECG-text multimodal model and building the FAISS index for report retrieval.
 
