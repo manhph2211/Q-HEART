@@ -38,7 +38,7 @@ Our work addresses the limitations of existing approaches by integrating a power
 git clone https://github.com/manhph2211/Q-HEART.git && cd Q-HEART
 conda create -n qheart python=3.9
 conda activate qheart
-pip install torch --index-url https://download.pytorch.org/whl/cu118 # cute 11.18
+pip install torch --index-url https://download.pytorch.org/whl/cu118 # cuda 11.18
 pip install -r requirements.txt
 ```
 

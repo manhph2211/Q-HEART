@@ -29,7 +29,7 @@ __pycache__/
 *$py.class
 dataloader.py
 predict.py
-
+*.ipynb
 # C extensions
 *.so
 

@@ -19,3 +19,5 @@ evaluate==0.4.3
 bert_score==0.3.13
 bitsandbytes==0.44.1
 rouge_score==0.1.2
+einops==0.8.1
+wandb==0.21.1
