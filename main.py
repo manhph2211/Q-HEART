@@ -29,7 +29,7 @@ def set_random_seeds(seed=42):
 
 def parse_argument():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_type", type=str, default="meta-llama/Llama-3.2-1B-Instruct", choices=("meta-llama/Llama-3.2-3B-Instruct","meta-llama/Llama-3.2-1B-Instruct","meta-llama/Llama-3.1-8B","meta-llama/Llama-3.2-1B","google/gemma-2-2b", "google/gemma-2b", "microsoft/Phi-3-mini-4k-instruct", "microsoft/phi-2", "gpt2-xl", "google/gemma-3-1b-pt"))
+    parser.add_argument("--model_type", type=str, default="meta-llama/Llama-3.2-1B-Instruct", choices=("meta-llama/Llama-3.2-3B-Instruct","meta-llama/Llama-3.2-1B-Instruct","meta-llama/Llama-3.2-1B","google/gemma-2-2b", "google/gemma-2b", "microsoft/Phi-3-mini-4k-instruct", "microsoft/phi-2", "gpt2-xl", "google/gemma-3-1b-pt"))
     parser.add_argument("--setting", type=str, default="lora", choices=("lora", "frozen", 'prefixtuning', "p_tuning", "prompttuning", "unfrozen"))
     parser.add_argument("--mapping_type", type=str, default="Transformer", choices=("MLPMixer","MLP", "Attention", "Transformer", "MOE"))
     parser.add_argument("--prefix_length", type=int, default=12)
@@ -70,19 +70,19 @@ if __name__ == "__main__":
     print(f"Finetune LLM {args.setting}: {args.model_type}, Freeze ECG Encoder {args.ecg_encoder_path}: {args.freeze_ecg_encoder}, Hyper: LR-{args.lr}, Epochs-{args.epochs}, Batchsize-{args.batch_size} ...")
 
     if args.finetune_dataset_path == "mimic":
-        finetune_dataset_path = "/common/home/users/h/hm.pham.2023/workspace/ecg_foundation_model/data/processed_data"
+        finetune_dataset_path = "/workspace/ecg_foundation_model/data/processed_data"
         finetune_csv_base = "mimic_ecg_qa"
     elif args.finetune_dataset_path == "ptbxl":
-        finetune_dataset_path = "/common/home/users/h/hm.pham.2023/workspace/ecg_foundation_model/data/downstream/ptbxl/processed_qa_data"
+        finetune_dataset_path = "/workspace/ecg_foundation_model/data/downstream/ptbxl/processed_qa_data"
         finetune_csv_base = "ptbxl_ecg_qa"
     else:
         raise "Only support MIMIC IV ECG and PTB-XL"  
 
     if args.evaluate_dataset_path == "mimic":
-        evaluate_dataset_path = "/common/home/users/h/hm.pham.2023/workspace/ecg_foundation_model/data/processed_data"
+        evaluate_dataset_path = "/workspace/ecg_foundation_model/data/processed_data"
         evaluate_csv_base = "mimic_ecg_qa"
     elif args.evaluate_dataset_path == "ptbxl":
-        evaluate_dataset_path = "/common/home/users/h/hm.pham.2023/workspace/ecg_foundation_model/data/downstream/ptbxl/processed_qa_data"
+        evaluate_dataset_path = "/workspace/ecg_foundation_model/data/downstream/ptbxl/processed_qa_data"
         evaluate_csv_base = "ptbxl_ecg_qa"
     else:
         raise "Only support MIMIC IV ECG and PTB-XL"   

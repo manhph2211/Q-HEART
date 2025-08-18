@@ -140,13 +140,13 @@ class FaissIndexing:
         
 
 if __name__ == "__main__":
-    # faiss_write(ecg_encoder, "/common/home/users/h/hm.pham.2023/workspace/ecg_foundation_model/data/processed_data") 
+    # faiss_write(ecg_encoder, "/workspace/ecg_foundation_model/data/processed_data") 
     
     train_data_csv_path = f"data/manifest/mimic_ecg_qa/train_qa.tsv"
     val_data_csv_path = f"data/manifest/mimic_ecg_qa/valid_qa.tsv"
     test_data_csv_path = f"data/manifest/mimic_ecg_qa/test_qa.tsv"
 
-    data_root = "/common/home/users/h/hm.pham.2023/workspace/ecg_foundation_model/data/processed_data"
+    data_root = "/workspace/ecg_foundation_model/data/processed_data"
     for csv_path in [test_data_csv_path, val_data_csv_path, train_data_csv_path]:
         faiss_indexing = FaissIndexing(data_root, csv_path)
         faiss_indexing.retrieval()
