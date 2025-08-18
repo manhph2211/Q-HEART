@@ -42,7 +42,7 @@ pip install torch --index-url https://download.pytorch.org/whl/cu118 # cuda 11.1
 pip install -r requirements.txt
 ```
 
-[2] Then, we need to Pre-process the PTB-XL and MIMIC IV (ECG-QA) folder that will contain `.mat` files. We can put them under `data/processed` directory.
+[2] Then, we need to pre-process the PTB-XL and MIMIC IV (ECG-QA) folder that will contain `.mat` files. We can put them under `data/processed` directory.
 
 - MIMIC-IV-ECG v1.0: Used for pre-training the ECG-text multimodal model and building the FAISS index for report retrieval.
 
@@ -54,11 +54,11 @@ pip install -r requirements.txt
 
 Note: MIMIC-ECGQA and PTB-XL datasets in raw form are available [here](https://github.com/Jwoo5/ecg-qa/tree/master).
 
-Note: Data splits also can be found at [here](https://github.com/Jwoo5/ecg-qa/tree/master). We put them inside `data/manifest`.
+Note: Data splits can also be found at [here](https://github.com/Jwoo5/ecg-qa/tree/master). We put them inside `data/manifest`.
 
-[3] Run training experiement as `python main.py`, see the arguments in `main.py`. Note that the ECG encoder should be well-trained prior to training the multimodal LLM and the processed data should contain the retrieved contexts. 
+[3] Run training experiement as `python main.py`, see the arguments in `main.py`. Note that the ECG encoder should be well-trained before training the multimodal LLM, and the processed data should contain the retrieved contexts by now. 
 
-[4] To evaluate the model, you can use `python main.py --eval` to evaluate the model on the chosen test set. You can play with some post-processing (e.g. answer order, synonym, none) and some decoding parameters (e.g. BEAMS, TOPK, TEMP) for optimal results.
+[4] To evaluate the model, you can use `python main.py --eval` to evaluate the model on the chosen test set. You can play with some post-processing (e.g., answer order, terminological variation, none) and some decoding parameters (e.g., BEAMS, TOPK, TEMP) for optimal results.
 
 ## 📄 Future Work
 
