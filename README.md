@@ -56,7 +56,9 @@ Note: MIMIC-ECGQA and PTB-XL datasets in raw form are available [here](https://g
 
 Note: Data splits also can be found at [here](https://github.com/Jwoo5/ecg-qa/tree/master). We put them inside `data/manifest`.
 
-[3] Run training experiement as `python main.py`, see the arguments in `main.py`. Note that the ECG encoder should be well-trained prior to training the multimodal LLM. To evaluate the model, you can use `python main.py --eval` to evaluate the model on the chosen test set.
+[3] Run training experiement as `python main.py`, see the arguments in `main.py`. Note that the ECG encoder should be well-trained prior to training the multimodal LLM and the processed data should contain the retrieved contexts. 
+
+[4] To evaluate the model, you can use `python main.py --eval` to evaluate the model on the chosen test set. You can play with some post-processing (e.g. answer order, synonym, none) and some decoding parameters (e.g. BEAMS, TOPK, TEMP) for optimal results.
 
 ## 📄 Future Work
 
