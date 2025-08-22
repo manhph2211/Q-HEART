@@ -123,7 +123,7 @@ if __name__ == "__main__":
         model = custom_pytorch_model_run(train_dataset, val_dataset, collator, model, args, name=f"ckpts/PTBXL/v3/{args.model_type}-mapping_type-{args.mapping_type}-setting-{args.setting}-freeze_encoder-{args.freeze_ecg_encoder}-shuffle-{args.shuffle_options}-lead_care-{args.lead_care}-add_context-{args.add_context}-add_options-{args.add_options}-add_template-{args.instruct_template}_no_pos")
     else:
         set_random_seeds(args.seed) 
-        checkpoint = "ckpts/PTBXL/v3/meta-llama/Llama-3.2-1B-Instruct-mapping_type-Transformer-setting-lora-freeze_encoder-False-shuffle-True-lead_care-False-add_context-True-add_options-True-add_template-True_48/best.bin"
+        checkpoint = "ckpts/sample.bin"
         if args.verbose:
             print(f">> Loading pre-trained model {checkpoint}!")
         if os.path.exists(checkpoint):
