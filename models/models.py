@@ -37,11 +37,7 @@ class CustomECGQAModel(nn.Module):
         #     quantization_config=quantization_config, device_map="auto",
         #     torch_dtype="auto", trust_remote_code=True,  attn_implementation='eager')
         
-        self.llm = AutoModelForCausalLM.from_pretrained(self.llm_type)#, device_map="auto", torch_dtype="auto", trust_remote_code=True, attn_implementation="flash_attention_2")
-        # self.llm = Gemma3ForCausalLM.from_pretrained(
-        #     self.llm_type,
-        #     device_map="auto"
-        # )
+        self.llm = AutoModelForCausalLM.from_pretrained(self.llm_type)
 
         self.llm_embedding_size = self.llm.config.hidden_size
         if setting == "lora":

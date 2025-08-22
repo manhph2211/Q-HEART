@@ -71,3 +71,14 @@ Several exciting directions for future research are identified:
 - Knowledge Graph Integration: Inject graph-structured clinical entities and relations (e.g., arrhythmia types and their relationships) into ECG features to improve question-answering performance and interpretability.
 
 We are open to collaboration and welcome contributions from the community. If you are interested in working together or have any discussion, please feel free to reach out!
+
+If you find this work useful 😄, please consider citing our paper:
+
+```
+@article{pham2025q,
+  title={Q-Heart: ECG Question Answering via Knowledge-Informed Multimodal LLMs},
+  author={Pham, Hung Manh and Tang, Jialu and Saeed, Aaqib and Ma, Dong},
+  journal={arXiv preprint arXiv:2505.06296},
+  year={2025}
+}
+```

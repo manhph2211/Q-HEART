@@ -29,7 +29,7 @@ def set_random_seeds(seed=42):
 
 def parse_argument():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_type", type=str, default="meta-llama/Llama-3.2-1B-Instruct", choices=("meta-llama/Llama-3.2-3B-Instruct","meta-llama/Llama-3.2-1B-Instruct","meta-llama/Llama-3.2-1B","google/gemma-2-2b", "google/gemma-2b", "microsoft/Phi-3-mini-4k-instruct", "microsoft/phi-2", "gpt2-xl", "google/gemma-3-1b-pt"))
+    parser.add_argument("--model_type", type=str, default="meta-llama/Llama-3.2-1B-Instruct", choices=("meta-llama/Llama-3.2-1B-Instruct","meta-llama/Llama-3.2-1B","google/gemma-2-2b", "google/gemma-2b", "microsoft/Phi-3-mini-4k-instruct", "microsoft/phi-2", "gpt2-xl", "google/gemma-3-1b-pt"))
     parser.add_argument("--setting", type=str, default="lora", choices=("lora", "frozen", 'prefixtuning', "p_tuning", "prompttuning", "unfrozen"))
     parser.add_argument("--mapping_type", type=str, default="Transformer", choices=("MLPMixer","MLP", "Attention", "Transformer", "MOE"))
     parser.add_argument("--prefix_length", type=int, default=12)
@@ -40,7 +40,6 @@ def parse_argument():
     parser.add_argument("--evaluate_dataset_path", type=str, default='ptbxl', choices=('ptbxl','mimic'))                        
     parser.add_argument("--question_type", type=str, default="all", choices=("all", "single-query", "single-verify", "single-choose"))
     parser.add_argument("--ecg_encoder_path", type=str, default="ckpts/Add_12Enc.pt")
-    parser.add_argument("--load_from_mimic", type=str, default="")    
     parser.add_argument("--freeze_ecg_encoder", type=bool, default=False)
     parser.add_argument("--add_context", type=bool, default=True)
     parser.add_argument("--add_options", type=bool, default=True)
@@ -121,15 +120,8 @@ if __name__ == "__main__":
     print(f"Percentage of trainable parameters: {100 * trainable_params / total_params:.2f}%")
 
     if not args.eval:
-        if args.load_from_mimic != "":
-            model.load_state_dict(
-                torch.load(args.load_from_mimic, map_location=torch.device("cuda"))
-            )
-            print(f"Loaded {args.load_from_mimic} Successfully from Pretrained MIMIC. Running evaluation on {evaluate_dataset_path}")
-
         model = custom_pytorch_model_run(train_dataset, val_dataset, collator, model, args, name=f"ckpts/PTBXL/v3/{args.model_type}-mapping_type-{args.mapping_type}-setting-{args.setting}-freeze_encoder-{args.freeze_ecg_encoder}-shuffle-{args.shuffle_options}-lead_care-{args.lead_care}-add_context-{args.add_context}-add_options-{args.add_options}-add_template-{args.instruct_template}_no_pos")
     else:
-        print(args)
         set_random_seeds(args.seed) 
         checkpoint = "ckpts/PTBXL/v3/meta-llama/Llama-3.2-1B-Instruct-mapping_type-Transformer-setting-lora-freeze_encoder-False-shuffle-True-lead_care-False-add_context-True-add_options-True-add_template-True_48/best.bin"
         if args.verbose:
@@ -146,7 +138,7 @@ if __name__ == "__main__":
         sample_data = None
 
         for qt in ["single-query","single-verify","single-choose"]:
-            test_data_csv_path = f"data/manifest/{evaluate_csv_base}/test_qa_with_new_context.tsv" #data/manifest/ptbxl_ecg_qa/test_qa_10.tsv test_qa_with_new_context
+            test_data_csv_path = f"data/manifest/{evaluate_csv_base}/test_qa_with_context.tsv" 
             test_dataset = CustomECGQADataset(evaluate_dataset_path, test_data_csv_path, question_type=qt, sample_data=sample_data, args=args)
             custom_eval_llm_open_ended(model, test_dataset, args)
             print(f"Done evaluating {qt} over random {sample_data} samples in {evaluate_dataset_path} !!!")
