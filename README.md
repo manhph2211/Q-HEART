@@ -21,7 +21,7 @@
 
 ## 🚀 Introduction
 
-This repository contains an implementation of Q-HEART, a novel multimodal framework for Electrocardiogram (ECG) Question Answering (ECG-QA). Q-HEART is designed to bridge the gap between complex physiological ECG signals and natural language understanding, enabling automated systems to accurately answer clinical questions directly from ECG data.
+This repository contains a simple implementation of Q-HEART, a novel multimodal framework for Electrocardiogram (ECG) Question Answering (ECG-QA). Q-HEART is designed to bridge the gap between complex physiological ECG signals and natural language understanding, enabling automated systems to accurately answer clinical questions directly from ECG data.
 
 Our work addresses the limitations of existing approaches by integrating a powerful, adapted ECG encoder with textual information via a specialized ECG-aware transformer-based mapping layer (ET-Mapper). Furthermore, Q-HEART leverages dynamic prompting and retrieval of relevant historical clinical reports to guide the language model towards knowledge-aware ECG reasoning.
 
