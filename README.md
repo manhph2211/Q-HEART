@@ -74,7 +74,7 @@ We are open to collaboration and welcome contributions from the community. If yo
 
 If you find this work useful 😄, please consider citing our paper:
 
-```
+```bibtex
 @article{pham2025q,
   title={Q-Heart: ECG Question Answering via Knowledge-Informed Multimodal LLMs},
   author={Pham, Hung Manh and Tang, Jialu and Saeed, Aaqib and Ma, Dong},
