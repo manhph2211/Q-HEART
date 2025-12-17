@@ -27,7 +27,6 @@ storage/
 __pycache__/
 *.py[cod]
 *$py.class
-dataloader.py
 predict.py
 *.ipynb
 # C extensions

@@ -132,7 +132,7 @@ class FaissIndexing:
             context = faiss_read(self.ecg_encoder, ecg, self.faiss_index, self.faiss_embedding_to_sample_map, k=3)            
             contexts.append(context)
         
-        self.df['context'] = contexts
+        self.df['context'] = contexts # will be loaded during dataloader
         
         output_file = f"{self.csv_data_path.replace('.tsv', '')}_with_context.tsv"
         self.df.to_csv(output_file, sep='\t', index=False)

@@ -7,8 +7,7 @@ import warnings
 warnings.filterwarnings("ignore")
 import json
 import sys
-sys.path.append(".")
-from models.ecg_encoder.cmelt import M3AEModel
+from models.ecg_encoder.dbeta import M3AEModel
 from types import SimpleNamespace
 
 
