@@ -81,4 +81,16 @@ If you find this work useful 😄, please consider citing our paper:
   journal={arXiv preprint arXiv:2505.06296},
   year={2025}
 }
+
+@inproceedings{pham2025qheart,
+  title     = {Q-HEART: ECG Question Answering via Knowledge-Informed Multimodal LLMs},
+  author    = {Pham, Hung Manh and Tang, Jialu and Saeed, Aaqib and Ma, Dong},
+  booktitle = {Proceedings of the European Conference on Artificial Intelligence (ECAI)},
+  series    = {Frontiers in Artificial Intelligence and Applications},
+  volume    = {413},
+  pages     = {4545--4552},
+  year      = {2025},
+  publisher = {IOS Press},
+  doi       = {10.3233/FAIA251356}
+}
 ```
