@@ -76,7 +76,7 @@ Several exciting directions for future research are identified:
 
 - Enhanced Numerical Reasoning: Incorporate conventional ECG-derived features (e.g., heart rate, interval durations) into the prompt context to improve numerical reasoning for query-type questions.
 
-- Larger, Medically Fine-tuned LLMs: Explore integrating larger language models that have undergone medical pre-training to potentially further enhance reasoning capabilities.
+- Larger, Medically Fine-tuned LLMs: Explore larger language models that have undergone medical pre-training (and also later post-training alignment) to potentially further enhance reasoning capabilities.
 
 - Knowledge Graph Integration: Inject graph-structured clinical entities and relations (e.g., arrhythmia types and their relationships) into ECG features to improve question-answering performance and interpretability.
 
