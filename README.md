@@ -26,13 +26,23 @@ This repository contains an implementation of Q-HEART (ECAI 2025), a novel multi
 Our work addresses the limitations of existing approaches by integrating a powerful, adapted ECG encoder with textual information via a specialized ECG-aware transformer-based mapping layer (ET-Mapper). Furthermore, Q-HEART leverages dynamic prompting and retrieval of relevant historical clinical reports to guide the language model towards knowledge-aware ECG reasoning.
 
 
+
 <div align="center">
     <img src="assets/Q-HEART.png" alt="Illustration of our contrastive masked ECG-language modeling technique"/>
 </div>
 
+
+
 ## 📖 Usage
 
-[1] First, we need to create a Python environment and install the following:
+
+```python
+# Fast Load
+from transformers import AutoModel
+model = AutoModel.from_pretrained("Manhph2211/Q-HEART", trust_remote_code=True, dtype="auto")
+```
+
+[1] For training, first, we need to create a Python environment and install the following:
 
 ```
 git clone https://github.com/manhph2211/Q-HEART.git && cd Q-HEART
