@@ -92,14 +92,14 @@ If you find this work useful 😄, please consider citing our paper:
   year={2025}
 }
 
-@inproceedings{DBLP:conf/ecai/PhamTS025,
-  author={Hung Manh Pham and Jialu Tang and Aaqib Saeed and Dong Ma},
-  title={Q-HEART: ECG Question Answering via Knowledge-Informed Multimodal LLMs},
-  year={2025},
-  cdate={1735689600000},
-  pages={4545-4552},
-  url={https://doi.org/10.3233/FAIA251356},
-  booktitle={ECAI},
-  crossref={conf/ecai/2025}
-}
+@inproceedings{pham2025qheart,
+  title     = {Q-HEART: ECG Question Answering via Knowledge-Informed Multimodal LLMs},
+  author    = {Pham, Hung Manh and Tang, Jialu and Saeed, Aaqib and Ma, Dong},
+  booktitle = {Proceedings of the European Conference on Artificial Intelligence (ECAI)},
+  series    = {Frontiers in Artificial Intelligence and Applications},
+  volume    = {413},
+  pages     = {4545--4552},
+  year      = {2025},
+  publisher = {IOS Press},
+  doi       = {10.3233/FAIA251356}
 ```
